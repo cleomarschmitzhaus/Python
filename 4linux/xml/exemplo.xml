@@ -1,0 +1,19 @@
+<partida>
+  <ano>2002</ano>
+  <torneio> Gauchao </torneio>
+  <times>
+     <mandante>Gremio</mandante>
+     <visitante>Inter</visitante>
+  </times>
+  <resultado>2x1
+    <gols>
+      <mandante>
+ 	<jogador1> França </jogador>
+	<jogador2> Cleo </jogador2>
+      </mandante>
+      <visitante>
+	<jogador1> Cabelo </jogador1>
+      </visitante>
+    </gols>
+  </resultado>
+</partida>

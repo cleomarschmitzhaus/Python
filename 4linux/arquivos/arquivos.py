@@ -20,4 +20,30 @@ print(conteudo)
 
 exit()
 
-#### Arquivos -> iniciar em modulos de escritas
+#### modulos de escritas
+
+# modo 'w' ele trunca o arquivo, grava por cima um arquivo vazio
+# dai deve abrir o arquivo antes e capturar o conteudo
+# altera o conteudo
+# grava a modificação
+arquivo = open('arquivo.txt')
+conteudo = arquivo.readlines()
+arquivo.close()
+conteudo.append('nova linha de exemplo') # conteudo modificado
+
+## altera esse conteudo
+# 1 abertura do arquivo
+
+arquivo = open('arquivo.txt')
+arquivo.writelines(conteudo)
+arquivo.close()
+
+# forma de abrir o arquivo sem subscrever tudo
+arquivo = open('arquivo.txt','a')
+arquivo.write('adicionei uma nova linha')
+arquivo.close()
+
+# mode x cria arquivo e não substitui o arquivo caso exista
+arquivo = open('cria_arquivo.txt','x')
+arquivo.write('nova linha\n')
+arquivo.close()
