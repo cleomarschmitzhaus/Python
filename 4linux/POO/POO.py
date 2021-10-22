@@ -10,6 +10,7 @@
 
 
 # pode criar varios objetos com a classe pilha
+from _typeshed import Self
 from typing_extensions import TypeVarTuple
 
 
@@ -30,7 +31,7 @@ class Pilha:
             self.topo += 1    
 
         # remover elemento  da pilha (desempilhar)
-        def desempilhar(self,):
+        def desempilhar(self):
             if not self.estaVazia():
                 item_removido = self.pilha[-1]
                 del self.pilha[-1]
@@ -74,14 +75,136 @@ exit()
 
 ####### proxima aula 7 herenças POO
 
+## Herença permite reutilizar codigo
+
+class colaborador:
+    def __init__(self):
+        self.nome = ''
+        self.endereco = ''
+        self.idade = 0
+        self.salario = 0.0
+
+    def apresentaColaborador(self):
+        return f'Colabotrador: {self.nome}\n' \
+                f'endereco: {self.endereco}\n' \
+                f'idade: {self.idade}'
 
 
+# para carregaer a herança de classe
+class Gerente(colaborador):
+    def calculaSalario(self, bonus):
+        return self.salario * bonus
 
+##############################################
 
+## Para ganhar herança de mais de uma classe
 
+class Mae:
+    def __init__(self):
+        self.nome = ''
+        self.nacionalidade = 'Francesa'
 
+    def falarFrances(self):
+        return 'Bonjur'
 
+class Pai:
+    def __init__(self):
+        self.nome = ''
+        self.nacionalidade = 'Inglesa'
+    
+    def falarIngles(self):
+        return 'Good Afternoon'
 
+class Filha(Mae, Pai):
+    pass
 
+exit()
 
+################################################################
+
+## Polimorfismo
+## é uma forma de mudar o comportamento de um metodo
+
+class Mago:
+    def __init__(self):
+        self.clase ='Mago'
+        self.habilidade = 'magia'
+
+    def atacar(Self):
+        return 'Ataque com magia'
+
+class Soldado(Mago):
+    def __init__(self):
+        self.clase ='Soldado'
+        self.habilidade = 'Uso de espada'
+
+    def atacar(Self):
+        return 'Ataque com espada'
+
+class Arqueiro:
+    def __init__(self):
+        self.clase ='Arqueiro'
+        self.habilidade = 'Uso de arco e flechas'
+
+    def atacar(Self):
+        return 'Ataque em distancia com arco e flexa'
+
+exit()
+
+############
+## Com sistema de heranças
+
+class profissao:
+    def __init__(self):
+        self.classe = ''
+        self.habilidade = ''
+
+class Mago(profissao):
+    def atacar(self):
+        return 'Ataque com magia'
+
+class Soldado(profissao):
+    def atacar(self):
+        return 'Ataque com espada'
+
+class Arqueiro(profissao):
+    def atacar(self):
+        return 'Ataque em distancia com arco e flexa'
+
+#################################################################
+## Composição de classe
+## Clientes -> produtos {nome, preço, sku} <-> carinho {adicionar item, remover item}
+
+class produto:
+    def __init__(self,
+        sku ='',
+        nome ='',
+        desc = '',
+        preco = 0.0
+    ):
+    
+    self.sku = sku
+    self.nome = nome
+    self.desc = desc
+    self.preco = preco
+
+class carrinhoDeCompras:
+    def __init__(self):
+        self.carrinho = []
+        self.quantidade_produtos = 0
+        self.total = 0
+
+    def adicionarProduto(self, produto):
+        self.carrinho.append(produto)
+        self.quantidade_produtos += 1
+
+    def removerProduto(self, nome_produto):
+
+        for produto in self.carrinhos:
+            if produto.nome == nome_produto:
+                self.carrinho.remove(produto)
+                removido = True
+                return 'O produto foi removido do carrinho'
+
+exit()
 
