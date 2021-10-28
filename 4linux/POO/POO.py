@@ -175,18 +175,20 @@ class Arqueiro(profissao):
 ## Composição de classe
 ## Clientes -> produtos {nome, preço, sku} <-> carinho {adicionar item, remover item}
 
-class produto:
-    def __init__(self,
-        sku ='',
-        nome ='',
-        desc = '',
-        preco = 0.0
-    ):
-    
-    self.sku = sku
-    self.nome = nome
-    self.desc = desc
-    self.preco = preco
+#class produto:
+    #def __init__(self,
+        #sku ='',
+        #nome ='',
+        #desc = '',
+        #preco = 0.0
+    #):
+
+    #self.sku = sku
+    #self.nome = nome
+    #self.desc = desc
+    #self.preco = preco
+
+exit()
 
 class carrinhoDeCompras:
     def __init__(self):
